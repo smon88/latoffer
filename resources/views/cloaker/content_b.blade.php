@@ -11,7 +11,6 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Agencia de Vuelos Global | Encuentra las Mejores Ofertas Aéreas">
     <meta property="og:description" content="Descubre vuelos baratos a destinos de todo el mundo. Compara precios de aerolíneas y reserva tu próximo viaje.">
-    <meta property="og:url" content="{{ url()->current() }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -38,7 +37,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-cover bg-center h-96 flex items-center justify-center text-white" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ asset('images/hero-plane.jpg') }}');">
+    <section class="bg-cover bg-center h-96 flex items-center justify-center text-white" >
         <div class="text-center">
             <h1 class="text-5xl font-bold mb-4">Encuentra Tu Próximo Vuelo</h1>
             <p class="text-xl mb-8">Explora el mundo con las mejores tarifas y aerolíneas de confianza.</p>
