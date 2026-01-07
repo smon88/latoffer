@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hidde{
+    display: none !important;
+}
+
+.header{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 4rem;
+    padding: 16px;
+    background: #10004f;
+    color: #fff;
+}
+
+.header img{
+    height: 32px;
+}
+
+.header__data{
+    width: 100%;
+}
+
+.header__data-content{
+    display: flex;
+    align-items: center;
+    height: 56px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.header__data-l{
+    padding-left: 16px;
+    line-height: 17px;
+}
+
+.header__fly{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(237, 22, 80);
+}
+
+.header__date{
+    font-size: 14px;
+    font-style: italic;
+    font-weight: normal;
+    color: rgb(35, 22, 166);
+}
+
+.header__data-r{
+    display: inline-flex;
+    align-items: center;
+    height: 35px;
+    margin-left: auto;
+    padding: 0 20px;
+    border-left: 2px solid #2316a6;
+}
+
+.header__people{
+    margin-left: 10px;
+    font-size: 24px;
+    color: rgb(35, 22, 166);
+}
+
+
+/* Botón Continuar */
+#btnContinue[disabled] {
+  cursor: not-allowed;
+  opacity: .7;            /* opcional, para que se note deshabilitado */
+}
+
+#btnContinue:not([disabled]) {
+  cursor: pointer;
+}
+
+/* Aplica también a los "Confirmar datos" dentro de cada sección */
+.form__btn[disabled] {
+  cursor: not-allowed;
+  opacity: .7;
+}
+
+.form__btn:not([disabled]) {
+  cursor: pointer;
+}

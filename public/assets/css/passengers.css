@@ -1,0 +1,261 @@
+.main{
+    margin-top: 60px;
+    padding: 20px 16px 0;
+}
+
+.main__ttl{
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: lighter;
+    color: #100088;
+}
+
+.form__content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form__element{
+    position: relative;
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(16, 0, 79, 0.12) 0px 2px 8px;
+    overflow: hidden;
+}
+
+.form__element.active{
+    height: auto;
+}
+
+.form__top{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 12px 16px;
+}
+
+.form__element.active .form__top{
+    border-bottom: 1px solid #ececec;
+}
+
+.form__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+    border-radius: 100%;
+    color: #1B0088;
+    background-color: rgb(243, 242, 246);
+}
+
+.form__passenger{
+    font-size: 14px;
+    font-weight: normal;
+    color: rgb(48, 48, 48);
+    transition: font-size 0.2s ease 0s;
+}
+
+.form__element.active .form__passenger{
+    font-size: 16px;
+    color: #100088;
+    font-weight: 600;
+}
+
+.form__float-icon{
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%) rotate(0deg);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.form__element.active .form__float-icon{
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.form__bot{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 24px 16px;
+}
+
+.form__content-input{
+    position: relative;
+}
+
+.form__content-input:first-child,
+.form__content-input:nth-child(2){
+    margin-bottom: 20px;
+}
+
+.form__input{
+    position: relative;
+    width: 100%;
+    height: 56px;
+    padding: 16px;
+    border-radius: 8px;
+    color: #555555;
+    background-color: transparent;
+    border: 1px solid #aaaaaa;
+    outline: none;
+    z-index: 1;
+}
+
+.form__input:focus{
+    border: 2px solid #100088;
+}
+
+.form__lbl{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #7c7c7c;
+    background-color: #fff;
+    transition: .3s ease-in-out;
+}
+
+.form__lbl-none{
+    top: 0;
+    padding: 0 6px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.form__input:focus ~ .form__lbl,
+.form__input:valid ~ .form__lbl{
+    top: 0;
+    padding: 0 6px;
+    font-size: 12px;
+    z-index: 1;
+}
+
+.form__input:focus ~ .form__lbl{
+    color: #1B0088;
+}
+
+.form__alert{
+    position: absolute;
+    left: 0px;
+    top: 100%;
+    font-size: 12px;
+    color: #303030;
+    padding: 0px 16px;
+}
+
+.form__ttl{
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: #1B0088;
+}
+
+
+.form__btn{
+    height: 56px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(232, 17, 75);
+    border: 1px solid rgb(232, 17, 75);
+    cursor: pointer;
+}
+
+
+.form__checkbox{
+    position: relative;
+}
+
+.cbx {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cbx__txt{
+    color: #555555;
+}
+
+.cbx:hover {
+    border-color: #4658df;
+}
+
+.flip {
+    display: block;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+#checkboxData {
+    display: none;
+}
+
+#checkboxData:checked+.cbx {
+    border-color: #4658df;
+}
+
+#checkboxData:checked+.flip {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+}
+
+.front {
+    background: #fff;
+    z-index: 1;
+    border: 2px solid #4658df;
+    border-radius: 3px;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: #4658df;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+    box-shadow: 0 0 0 1px #4658df;
+}
+
+.back svg {
+    margin-top: 3px;
+    fill: none;
+}
+
+.back svg path {
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.footer__wrapper{
+    height: 140px;
+    margin-top: 30px;
+}
+
+.footer{
+    padding-bottom: 20px;
+}

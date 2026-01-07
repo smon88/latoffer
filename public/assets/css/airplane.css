@@ -1,0 +1,424 @@
+body{
+    background-color: #f3f2f6;
+}
+
+.wrapper{
+    min-height: 100vh;
+    background-color: #f3f2f6;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 !important;
+    z-index: 10;
+}
+
+.header img{
+    margin: 16px;
+}
+
+.sub-header{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-bottom: 6px;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0px 4px 10px #0000001c;
+    z-index: 10;
+}
+
+.sub-header__txt{
+    padding: 8px;
+    text-align: center;
+    color: #1b0088;
+}
+
+.sub-header__carrousel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.sub-header__content{
+    display: flex;
+    padding: 8px 16px;
+    overflow: hidden;
+    color: #10004f;
+}
+
+.sub-header__txt--strong{
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.sub-header__txt--sub{
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.sub-header__arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    margin: 0 8px;
+    border-radius: 100%;
+    background-color: rgb(232, 17, 75);
+    cursor: pointer;
+}
+
+.airplane{
+    position: relative;
+    width: 93%;
+    max-width: 335px;
+    margin: 5rem auto 10rem;
+    padding: 10rem 0px 0rem;
+    border-radius: 12rem 12rem 6rem 6rem;
+    background-color: #fff;
+    border: 2px solid rgb(225, 225, 225);
+    overflow: hidden;
+}
+
+.airplane__float{
+    position: fixed;
+    top: 170px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 80px;
+    padding-left: 6px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    z-index: 1;
+}
+
+.airplane__float::-webkit-scrollbar{
+    display: none;
+}
+
+.airplane__float-element{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 150px;
+    min-height: 10px;
+    height: 48px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(16, 0, 79, 0.12) 0px 2px 8px 0px;
+    overflow: hidden;
+}
+
+.airplane__float-element.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    border-radius: 8px 0px 0px 8px;
+    border-left: 4px solid #1b0088;
+}
+
+.airplane__float-chair{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #1b0088;
+}
+
+.airplane__float-chair.first{
+    background-color: #800F71;
+}
+
+.airplane__float-chair span{
+    width: 100%;
+    height: 85%;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.airplane__float-name{
+    font-size: 14px;
+    font-weight: 600;
+    color: #10004f;
+}
+
+.airplane__name{
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #303030;
+}
+
+.airplane__content{
+    width: 100%;
+    padding-bottom: 5rem;
+    box-shadow: inset 0px -2px 10px #00000023;
+}
+
+.airplane__letter-contend{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    padding: 1rem 0.5rem 0rem;
+}
+
+.airplane__letter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0%;
+    height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #10004f;
+}
+
+.airplane__chair-row{
+    display: flex;
+    padding: 0px 0.5rem;
+    margin-top: 8px;
+}
+
+.airplane__chair{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 0%;
+    margin: 0 4px;
+    font-size: 12px;
+    aspect-ratio: 4 / 5;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.chair__first{
+    background-image: url(../img/airplane/p-economy-first-row.svg);
+}
+
+.chair__first-selected{
+    background-image: url(../img/airplane/p-economy-first-row-selected.svg);
+}
+
+.chair__first-confirmed{
+    background-image: url(../img/airplane/p-economy-first-row-confirmed.svg);
+}
+
+.chair__standard{
+    background-image: url(../img/airplane/p-economy-standard.svg);
+}
+
+.chair__standard-selected{
+    background-image: url(../img/airplane/p-economy-standard-selected.svg);
+}
+
+.chair__standard-confirmed{
+    background-image: url(../img/airplane/p-economy-standard-confirmed.svg);
+}
+
+.chair__disabled{
+    background-image: url(../img/airplane/disabled.svg);
+}
+
+.airplane__exit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin: 16px 0;
+}
+
+.airplane__exit-txt{
+    font-size: 14px;
+    font-weight: 600;
+    color: #303030;
+}
+
+.box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px 16px 16px;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.box__close{
+    position: absolute;
+    top: 1rem;
+    right: 16px;
+    width: 35px;
+    height: 20px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.box__close::before,
+.box__close::after{
+    content: " ";
+    position: absolute;
+    left: 15px;
+    width: 2px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: rgb(48, 48, 48);
+}
+
+.box__close::after{
+    transform: rotate(-45deg);
+}
+
+.box__content{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgb(225, 225, 225);
+}
+
+.box__content--padding{
+    align-items: center;
+    padding: 12px 0;
+}
+
+.box__content-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.box__data{
+    color: #10004f;
+}
+
+.box__data strong{
+    font-size: 19.2px;
+    font-weight: 600;
+}
+
+.box__data-txt,
+.box__data-txt strong{
+    font-size: 14.4px;
+}
+
+.box__price{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1b0088;
+}
+
+.box__price--small{
+    font-size: 16px;
+}
+
+.box__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 47px;
+    padding: 12px 0;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.box__bot{
+    padding: 12px 0 10px;
+}
+
+.box__element{
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.box__element span{
+    font-size: 14px;
+    color: #303030;
+}
+
+.box__btn{
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(232, 17, 75);
+    border: 1px solid rgb(232, 17, 75);
+}
+
+.box__bot.standard .box__element:first-child,
+.box__bot.first .box__element:nth-child(2),
+.box__bot.first .box__element:last-child{
+    display: flex;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px 16px 0;
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+    box-shadow: rgba(16, 0, 79, 0.2) 0px 0px 1.25rem;
+    z-index: 1;
+}
+
+.footer__btn{
+    width: 100%;
+    min-height: 56px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(232, 17, 75);
+    border: 1px solid rgb(232, 17, 75);
+}
+
+.footer__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    font-weight: 600;
+}
+
+.footer__content span:first-child{
+    display: flex;
+    align-items: end;
+    gap: 4px;
+    color: rgb(70, 88, 223);
+    cursor: pointer;
+}
+
+.footer__content span:last-child{
+    display: flex;
+    gap: 4px;
+    color: #000;
+}

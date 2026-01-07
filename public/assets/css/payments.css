@@ -1,0 +1,268 @@
+.main{
+    margin-top: 60px;
+    margin-bottom: 40px;
+    padding: 20px 16px 0;
+}
+
+.main__ttl{
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: lighter;
+    color: #100088;
+}
+
+.main__sub{
+    font-size: 22px;
+    font-weight: lighter;
+    margin: 20px 0;
+}
+
+.bill{
+    padding: 16px;
+    border-radius: 8px;
+    color: #100088;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(225, 225, 225);
+}
+
+.bill__top{
+    border-bottom: 1px solid #dddddd;
+}
+
+.bill__total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bill__txt{
+    font-size: 20px;
+}
+
+.bill__total-txt{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bill__sub{
+    display: block;
+    margin: 4px 0 16px;
+    font-size: 14px;
+    color: #7a7a7a;
+}
+
+.bill__mid{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 16px 0;
+}
+
+.bill__going,
+.bill__lap{
+    font-size: 0.875rem;
+}
+
+.bill__travel{
+    font-weight: 600;
+}
+
+.bill__date{
+    font-weight: lighter;
+    color: #000;
+}
+
+.bill__time{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: lighter;
+    color: #000;
+}
+
+.method{
+    padding: 16px;
+    border-radius: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(48, 48, 48, 0.1) 0px 0.25rem 0.5rem;
+}
+
+.method__wrapper{
+    display: flex;
+    gap: 10px;
+    color: #100088;
+}
+
+.method__svg{
+    min-width: 26px;
+}
+
+.method__content-txt{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.method__ttl{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.method__txt{
+    font-size: 14px;
+}
+
+.form__checkbox{
+    position: relative;
+}
+
+.cbx {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cbx__txt{
+    color: #555555;
+}
+
+.cbx:hover {
+    border-color: #4658df;
+}
+
+.flip {
+    display: block;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+#checkboxData,
+#checkboxConfirm {
+    display: none;
+}
+
+#checkboxData:checked+.cbx,
+#checkboxConfirm:checked+.cbx {
+    border-color: #4658df;
+}
+
+#checkboxData:checked+.flip,
+#checkboxConfirm:checked+.flip {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.front {
+    background: #fff;
+    z-index: 1;
+    border: 2px solid #4658df;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: #4658df;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+    box-shadow: 0 0 0 1px #4658df;
+}
+
+.back svg {
+    margin-top: 3px;
+    fill: none;
+}
+
+.back svg path {
+    stroke: #fff;
+    stroke-width: 2.3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.method__element{
+    margin-top: 20px;
+    position: relative;
+}
+
+.method__input{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 16px;
+    border-radius: 8px;
+    color: #555555;
+    border: 1px solid #7a7a7a;
+    background-color: transparent;
+    overflow: none;
+    z-index: 1;
+}
+
+.method__lbl{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    color: #555555;
+    transition: .3s ease-in-out;
+}
+
+.method__input:focus{
+    border: 2px solid #100088;
+    outline: #100088;
+}
+
+.method__input:focus ~ .method__lbl,
+.method__input:valid ~ .method__lbl{
+    top: 0;
+    padding: 0 6px;
+    font-size: 12px;
+    color: #100088;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.check{
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.check .form__checkbox{
+    margin-top: 6px;
+}
+
+.check__txt p{
+    font-size: 16px;
+    font-weight: 600;
+    color: #555555;
+}
+
+.check__txt p:last-child{
+    text-decoration: underline;
+    color: #4658df;
+}
+
+.main__btn{
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid #e8114b;
+    background-color: #e8114b;
+    cursor: pointer;
+}

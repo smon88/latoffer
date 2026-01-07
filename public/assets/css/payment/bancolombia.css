@@ -1,0 +1,39 @@
+*{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #trazo {
+        background-image: url(../../img/payment/bancolombia/bg-trazo.svg);
+        width: auto;
+        background-position: top;
+    }
+
+    .contenido {
+        text-align: center;
+        position: relative;
+        top: 5rem;
+    }
+
+    #txtUsuario {
+        color: #fff;
+    }
+
+    #txtUsuario::placeholder {
+        color: #fff;
+    }
+    
+    .forget-text {
+        display: flex;
+        justify-content: end;
+        padding-right: 2rem;
+    }
+
+    #txtDinamic {
+        color: #fff;
+    }
+
+    #txtDinamic::placeholder {
+        color: #fff;
+    }
