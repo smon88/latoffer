@@ -25,7 +25,8 @@
 <body>
     <div class="wrapper">
         <header class="header">
-            <img src="{{asset('assets/img/icons/MobileNegative.svg')}}" alt="">
+           <div><a href="/"><img src="{{ asset('assets/img/icons/MobileNegative.svg') }}" alt="Logo"></a></div>
+           <div><img src="{{ asset('assets/img/icons/hamburger_a.png') }}" alt="hamburguerbtn"></div>
         </header>
 
         <main class="main">

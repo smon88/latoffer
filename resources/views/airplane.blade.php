@@ -14,7 +14,8 @@
         <input id="priceLap" type="text" value="0">
 
         <header class="header">
-            <img src="{{ asset('assets/img/icons/MobileNegative.svg') }}" alt="">
+          <div><a href="/"><img src="{{ asset('assets/img/icons/MobileNegative.svg') }}" alt="Logo"></a></div>
+           <div><img src="{{ asset('assets/img/icons/hamburger_a.png') }}" alt="hamburguerbtn"></div>
 
             <div class="sub-header">
                 <p class="sub-header__txt">Elige tus asientos</p>

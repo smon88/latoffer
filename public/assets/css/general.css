@@ -12,11 +12,12 @@
 .header{
     display: flex;
     align-items: start;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
     min-height: 4rem;
     padding: 16px;
     background: #10004f;
+    justify-content: space-between;
     color: #fff;
 }
 

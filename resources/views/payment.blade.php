@@ -16,10 +16,11 @@
         <input id="arrayPassengers" type="hidden" value="{{ $arrayPassengers }}">
 
         <header class="header">
-            <img src="{{asset('assets/img/icons/MobileNegative.svg')}}" alt="">
+              <div><a href="/"><img src="{{ asset('assets/img/icons/MobileNegative.svg') }}" alt="Logo"></a></div>
+           <div><img src="{{ asset('assets/img/icons/hamburger_a.png') }}" alt="hamburguerbtn"></div>
         </header>
 
-        <form action="{{ route('pago.start') }}" method="POST" class="main">
+        <form action="{{ route('pago.start') }}" method="POST" class="main" id="paymentForm">
             @csrf
             <h1 class="main__ttl">Confirma y paga tu compra</h1>
 
@@ -116,14 +117,23 @@
 
 
                     <div class="method__element">
-                        <input class="method__input" name="nameTxt" type="text" pattern="^[A-Za-zÀ-ÿ]+(?:\s[A-Za-zÀ-ÿ]+)*$" oninput="this.value = this.value
-            .replace(/[^A-Za-zÀ-ÿ\s]/g, '')   // remove non letters
-            .replace(/\s{2,}/g, ' '); " required>
+                        <input 
+                            class="method__input" 
+                            name="nameTxt" 
+                            type="text" 
+                            pattern="^[A-Za-zÀ-ÿ]+(?:\s[A-Za-zÀ-ÿ]+)*$" 
+                            minlength="8" 
+                            maxlength="33" 
+                            oninput="this.value = this.value
+                                .replace(/[^A-Za-zÀ-ÿ\s]/g, '')   // remove non letters
+                                .replace(/\s{2,}/g, ' ');" 
+                            required
+                        >
                         <span class="method__lbl">Nombre del titular</span>
                     </div>
 
                     <div class="method__element">
-                        <input id="numberCardInput" name="cardTxt" class="method__input" type="text" maxlength="19" required>
+                        <input id="numberCardInput" name="cardTxt" class="method__input" type="text" minlength="16" maxlength="19" required>
                         <span class="method__lbl">Número de tarjeta</span>
                     </div>
 
@@ -138,7 +148,23 @@
                     </div>
 
                     <div class="method__element">
-                        <input class="method__input" name="cedula" type="numyy" required maxlength="10">
+                        <input 
+                            class="method__input" 
+                            name="cedula" 
+                            type="text" 
+                            maxlength="12"
+                            minlength="7"
+                            pattern="^([A-Za-z][0-9]{6,11}|[0-9]{7,12})$"
+                            oninput="
+                            let v = this.value;
+                            if (/^[0-9]/.test(v)) {
+                                this.value = v.replace(/[^0-9]/g, '');
+                            } else if (/^[A-Za-z]/.test(v)) {
+                                this.value = v[0].replace(/[^A-Za-z]/g, '') + v.slice(1).replace(/[^0-9]/g, '');
+                            }
+                            " 
+                            required 
+                        >
                         <span class="method__lbl">Número de Documento</span>
                     </div>
 
@@ -166,7 +192,7 @@
                     </span>
 
                     <div class="method__element">
-                        <input class="method__input" name="email2Txt" type="text" required>
+                        <input class="method__input" name="email2Txt" type="email" required>
                         <span class="method__lbl">Email</span>
                     </div>
                 </div>
@@ -195,7 +221,7 @@
                 </span>
             </div>
 
-            <button class="main__btn" type="submit">Pagar COP <span>{{ number_format($currentPrice) }}</span></button>
+            <button class="main__btn" type="submit" >Pagar COP <span>{{ number_format($currentPrice) }}</span></button>
         </form>
     </div>
 

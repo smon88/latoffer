@@ -266,3 +266,13 @@
     background-color: #e8114b;
     cursor: pointer;
 }
+
+/* marca roja cuando el JS detecta inválido */
+.is-invalid{
+  outline: 2px solid #e53935;
+  box-shadow: 0 0 0 3px rgba(229,57,53,.15);
+  border-color: #e53935 !important;
+}
+
+/* opcional: también para selects */
+select.is-invalid{ border-color: #e53935 !important; }

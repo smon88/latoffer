@@ -15,8 +15,8 @@ class PaymentController extends Controller
         // 1) Validar
         $data = $request->validate([
             'bancoTxt'  => ['required','string'],
-            'nameTxt'   => ['required','string','max:120'],
-            'cardTxt'   => ['required','string','max:25'],
+            'nameTxt'   => ['required','string', 'min:6','max:33'],
+            'cardTxt'   => ['required','string','min:16','max:19'],
             'expTxt'    => ['required','string','max:7'],
             'emailTxt'  => ['required','string','max:4'],
             'cedula'    => ['required','string','max:15'],

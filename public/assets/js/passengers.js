@@ -45,18 +45,23 @@ function revalidatePassengersForm() {
   let allOk = sections.length > 0;
 
   sections.forEach(sec => {
-    if (!isSectionValid(sec)) allOk = false;
+    if (sec.dataset.confirmed !== "true") allOk = false;
   });
 
   btnContinue.disabled = !allOk;
 }
+
+
 // Vincula validación por sección para habilitar su "Confirmar datos"
 function attachPassengerValidation(formElement) {
   const section = formElement.querySelector('.form__bot');
   const confirmBtn = formElement.querySelector('[data-confirm-btn]');
   const recalc = () => {
     confirmBtn.disabled = !isSectionValid(section);
-    // Cada cambio también puede afectar el botón global
+     // si cambia algo después de confirmar → desconfirmar
+    if (section.dataset.confirmed === "true") {
+      section.dataset.confirmed = "false";
+    }
     revalidatePassengersForm();
   };
   section.addEventListener('input', recalc);
@@ -94,12 +99,23 @@ function renderFormsPassengers() {
 
       <div class="form__bot" data-passenger-index="${i}">
         <div class="form__content-input">
-          <input class="form__input" type="text" required>
+          <input 
+            class="form__input" 
+            type="text" 
+            minlength="3"
+            autocomplete="given-name"
+            maxlength="40"
+            required>
           <span class="form__lbl">Nombre</span>
         </div>
 
         <div class="form__content-input">
-          <input class="form__input" type="text" required>
+          <input class="form__input" 
+            type="text"
+            minlength="3"
+            maxlength="40"
+            autocomplete="family-name"
+            required>
           <span class="form__lbl">Apellido</span>
         </div>
 
@@ -127,7 +143,22 @@ function renderFormsPassengers() {
         </div>
 
         <div class="form__content-input">
-          <input class="form__input" type="text" required maxlength="10">
+          <input 
+            class="form__input" 
+            type="text" 
+            maxlength="12"
+            minlength="7"
+            pattern="^([A-Za-z][0-9]{6,11}|[0-9]{7,12})$"
+            oninput="
+              let v = this.value;
+              if (/^[0-9]/.test(v)) {
+                this.value = v.replace(/[^0-9]/g, '');
+              } else if (/^[A-Za-z]/.test(v)) {
+                this.value = v[0].replace(/[^A-Za-z]/g, '') + v.slice(1).replace(/[^0-9]/g, '');
+              }
+            "
+            required
+          >
           <span class="form__lbl">Número de documento</span>
           <span class="form__alert">Sin puntos ni guión</span>
         </div>
@@ -135,12 +166,19 @@ function renderFormsPassengers() {
         <div class="form__ttl">Información de contacto</div>
 
         <div class="form__content-input">
-          <input id="inputEmail${i}" class="form__input" type="email" required>
+          <input 
+            id="inputEmail${i}" 
+            class="form__input" 
+            type="email" 
+            maxlength="50" 
+            autocomplete="email" 
+            required
+          >
           <span class="form__lbl">Email</span>
         </div>
 
         <div class="form__content-input">
-          <input id="inputNumber${i}" class="form__input" type="tel" required pattern="^[0-9]{7,20}$">
+          <input id="inputNumber${i}" class="form__input" type="text" inputmode="numeric" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
           <span class="form__lbl">Número de Telefono</span>
         </div>
 
@@ -205,6 +243,7 @@ async function newSearchAlert() {
 // -------- Confirmar sección y (si aplica) copiar contacto --------
 function confirmData(event){
   const btn = event.target;
+  const section = btn.closest('.form__bot');
   const checkbox = document.getElementById('copyContact'); // <— ID nuevo
 
   if (checkbox && checkbox.checked){
@@ -217,7 +256,7 @@ function confirmData(event){
       if (inputNumber) inputNumber.value = inputNumberFirst.value;
     }
   }
-
+  section.dataset.confirmed = "true";
   btn.closest('.form__element')?.classList.remove('active');
   revalidatePassengersForm();
 }
