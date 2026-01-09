@@ -17,6 +17,7 @@ const airportErrorA = document.getElementById('airportErrorAlert');
 
 // Función para actualizar la lista de aeropuertos
 function updateAirportList(input) {
+    airportErrorA.style.display = "none";
     const query = input.value.toLowerCase();
 
     if (query.length < 2) {
@@ -52,10 +53,11 @@ function updateAirportList(input) {
         });
 
         airportInfoDiv.innerHTML = airportsHTML;
-        airportInfoDiv.classList.remove('hidde');
+        airportInfoDiv.classList.remove('hidde');   
         airportErrorA.classList.add('hidde');
     } else {
         airportErrorA.classList.remove('hidde');
+        airportErrorA.style.removeProperty("display");
         airportInfoDiv.classList.add('hidde');
         airportInfoDiv.innerHTML = '';
     }
@@ -79,7 +81,6 @@ function selectAirport(code, airportText) {
     // Ocultar la lista de aeropuertos
     airportInfoDiv.classList.add('hidde');
     airportInfoDiv.innerHTML = '';
-    airportErrorA.classList.add('hidde');
     document.getElementById('confirmBtn').disabled = false;
 }
 

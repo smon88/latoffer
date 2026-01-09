@@ -14,6 +14,7 @@ function togglePopup(type) {
         listT: document.getElementById('listType'),
         listC: document.getElementById('listCabina'),
         listAirport: document.getElementById('airport-info'),
+        errorAlert: document.getElementById('airportErrorAlert'),
         date: document.getElementById('date'),
         calendar: document.getElementById('calendar'),
         passengers: document.getElementById('passengers')
@@ -23,8 +24,11 @@ function togglePopup(type) {
     function hideAll() {
         for (let key in elements) {
             elements[key].classList.add('hidde');
+            elements["errorAlert"].style.removeProperty("display");
+
         }
         document.getElementById('confirmBtn').disabled = true;
+        document.getElementById('confirmBtn').classList.add('is_disabled');
     }
 
     hideAll();
@@ -39,32 +43,38 @@ function togglePopup(type) {
 
     switch (type) {
         case 'Origen':
-            showElements(['titleOD', 'inputO', 'listAirporta']);
+            showElements(['titleOD', 'inputO', 'listAirport']);
             break;
         case 'Destino':
-            showElements(['titleOD', 'inputD', 'listAirportb']);
+            showElements(['titleOD', 'inputD', 'listAirport']);
             break;
         case 'Viaje':
             showElements(['titleTC', 'listT']);
             document.getElementById('confirmBtn').disabled = false;
+            document.getElementById('confirmBtn').classList.remove('is_disabled');
 
             formatUl(document.getElementById('listType'), typeTxt);
             break;
         case 'Cabina':
             showElements(['titleTC', 'listC']);
             document.getElementById('confirmBtn').disabled = false;
+            document.getElementById('confirmBtn').classList.remove('is_disabled');
+
+
 
             formatUl(document.getElementById('listCabina'), cabinaTxt);
             break;
         case 'viajas':
             showElements(['date', 'calendar']);
             document.getElementById('confirmBtn').disabled = true;
-
+            document.getElementById('confirmBtn').classList.add('is_disabled');
             dateVueltaChoose.textContent = typeTxt === "Solo ida" ? "Solo ida" : "Selecciona";
             break;
         case 'Agregar pasajeros':
             showElements(['passengers']);
             document.getElementById('confirmBtn').disabled = false;
+            document.getElementById('confirmBtn').classList.remove('is_disabled');
+
             break;
         case close:
             popup.classList.remove('hidde');

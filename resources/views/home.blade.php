@@ -16,9 +16,9 @@
     <div id="popup" class="popup hidde">
         <div class="popup__ttl">
             <p>
-                <span id="titleTC">Tipo de</span>
-                <span id="titleOD">Ingresa tu</span>
-                <span id="popupTitle"></span>
+                <span id="titleTC" class="hidde">Tipo de</span>
+                <span id="titleOD" class="hidde">Ingresa tu</span>
+                <span id="popupTitle" class="hidde"></span>
             </p>
             <svg onclick="togglePopup('close')" class="popup__close" xmlns="http://www.w3.org/2000/svg" fill="none" focusable="false" viewBox="0 0 32 32"><path d="M30 27.5829L27.1881 30.375L16 19.1869L4.79207 30.375L2 27.5829L13.1881 16.375L2 5.18685L4.79207 2.375L15.9802 13.5829L27.1881 2.375L30 5.18685L18.7921 16.375L30 27.5829Z" fill="currentColor"></path></svg>
         </div>
@@ -49,8 +49,8 @@
             </ul>
 
             <!-- Listado de Ciudades -->
-            <div id="airport-info" class="airporta"></div>
-            <div id="airport-info" class="airportb"></div>
+            <div id="airport-info" class="airport hidde"></div>
+
 
             <!-- ERROR Ciudades -->
             <div id="airportErrorAlert" class="airport-error hidde">
