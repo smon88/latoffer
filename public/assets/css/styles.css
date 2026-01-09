@@ -90,6 +90,19 @@ b {
     z-index: 99999;
 }
 
+.search__btn {
+    width: 100%;
+    padding: 15px 17px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    background-color: #ed1650;
+    border: 1px solid #ed1650;
+    z-index: 99999;
+}
+
 .popup__ul {
     display: flex;
     flex-direction: column;
@@ -869,7 +882,7 @@ b {
 }
 
 /* Botón Continuar */
-#btnContinue[disabled], #confirmBtn[disabled] {
+#btnContinue[disabled], #confirmBtn[disabled], #search_btn[disabled] {
     cursor: not-allowed;
     opacity: 0.7; /* opcional, para que se note deshabilitado */
 }
