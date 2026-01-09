@@ -6,7 +6,7 @@
 }
 
 .hidde{
-    display: none !important;
+    visibility: hidden;
 }
 
 .header{
