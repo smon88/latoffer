@@ -49,7 +49,8 @@
             </ul>
 
             <!-- Listado de Ciudades -->
-            <div id="airport-info" class="airport hidde"></div>
+            <div id="airport-info" class="airporta"></div>
+            <div id="airport-info" class="airportb"></div>
 
             <!-- ERROR Ciudades -->
             <div id="airportErrorAlert" class="airport-error hidde">

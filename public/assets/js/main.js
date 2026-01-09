@@ -39,10 +39,10 @@ function togglePopup(type) {
 
     switch (type) {
         case 'Origen':
-            showElements(['titleOD', 'inputO', 'listAirport']);
+            showElements(['titleOD', 'inputO', 'listAirporta']);
             break;
         case 'Destino':
-            showElements(['titleOD', 'inputD', 'listAirport']);
+            showElements(['titleOD', 'inputD', 'listAirportb']);
             break;
         case 'Viaje':
             showElements(['titleTC', 'listT']);
